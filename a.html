@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tìm Kiếm và Lọc Truyện</title>
+    <!-- Tải Tailwind CSS từ CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="thietkeweb.css">
+</head>
+<body>
+     <div class="header">
+        <!-- Cột trái: logo -->
+        <div class="header-left">
+            <img src="logo.jpg" alt="Logo" class="logo-img">
+        </div>
+
+        <!-- Cột giữa: menu -->
+        <div class="header-center">
+            <a href="Baitap1.html" >TRANG CHỦ</a>
+            <a href="a.html"class="active">DANH SÁCH</a>
+            <a href="../Baitap1/lienhe.html">LIÊN HỆ</a>
+        </div>
+
+        <!-- Cột phải: tìm kiếm + icon người dùng -->
+        <div class="header-right">
+            <input type="text" placeholder="Tìm kiếm..." id="searchInput">
+            <img src="icon.jpg" alt="User" class="user-icon">
+        </div>
+    </div>
+    </div>
+    <!-- Chứa toàn bộ nội dung của trang, giúp căn giữa và tạo khoảng cách.-->
+    <div class="container">
+        <!-- Thanh tìm kiếm -->
+        <div class="thanh-tim-kiem">
+            <button id="nutTimKiem" class="nut-tim-kiem">TÌM KIẾM</button>
+            <input type="text" id="oTimKiem" placeholder="Nhập từ khóa" class="o-tim-kiem">
+        </div>
+
+        <!-- Phần Trạng Thái -->
+        <div class="mb-6">
+            <div class="tieu-de-phan flex items-center justify-between cursor-pointer" onclick="anHienPhan('phan-trang-thai')">
+                <span>Trạng Thái</span>
+                <span id="mui-ten-trang-thai" class="transform transition-transform duration-200">▼</span>
+            </div>
+            <div id="phan-trang-thai" class="nhom-checkbox">
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="notStarted" name="status" value="notStarted">
+                    <label for="notStarted">Chưa bắt đầu</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="paused" name="status" value="paused">
+                    <label for="paused">Đã dừng lại</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="completed" name="status" value="completed">
+                    <label for="completed">Hoàn lại</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="inProgress" name="status" value="inProgress">
+                    <label for="inProgress">Đang thực hiện</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="finished" name="status" value="finished">
+                    <label for="finished">Hoàn thành</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="hasText" name="status" value="hasText">
+                    <label for="hasText">Có Truyện Chữ</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần Thể Loại -->
+        <div class="mb-6">
+            <div class="tieu-de-phan flex items-center justify-between cursor-pointer" onclick="anHienPhan('phan-the-loai')">
+                <span>Thể Loại</span>
+                <span id="mui-ten-the-loai" class="transform transition-transform duration-200">▼</span>
+            </div>
+            <div id="phan-the-loai" class="nhom-checkbox">
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="anime" name="genre" value="anime">
+                    <label for="anime">Anime</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="drama" name="genre" value="drama">
+                    <label for="drama">Drama</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="josei" name="genre" value="josei">
+                    <label for="josei">Josei</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="manhwa" name="genre" value="manhwa">
+                    <label for="manhwa">Manhwa</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="oneShot" name="genre" value="oneShot">
+                    <label for="oneShot">One Shot</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="shounen" name="genre" value="shounen">
+                    <label for="shounen">Shounen</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="webtoons" name="genre" value="webtoons">
+                    <label for="webtoons">Webtoons</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="shoujo" name="genre" value="shoujo">
+                    <label for="shoujo">Shoujo</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="harem" name="genre" value="harem">
+                    <label for="harem">Harem</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="ecchi" name="genre" value="ecchi">
+                    <label for="ecchi">Ecchi</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="mature" name="genre" value="mature">
+                    <label for="mature">Mature</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="sliceOfLife" name="genre" value="sliceOfLife">
+                    <label for="sliceOfLife">Slice of life</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="isekai" name="genre" value="isekai">
+                    <label for="isekai">Isekai</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="manga" name="genre" value="manga">
+                    <label for="manga">Manga</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="manhua" name="genre" value="manhua">
+                    <label for="manhua">Manhua</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="adventure" name="genre" value="adventure">
+                    <label for="adventure">Phiêu Lưu</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="comedy" name="genre" value="comedy">
+                    <label for="comedy">Hài Hước</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="martialArts" name="genre" value="martialArts">
+                    <label for="martialArts">Võ Thuật</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="mystery" name="genre" value="mystery">
+                    <label for="mystery">Huyền Bí</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="romantic" name="genre" value="romantic">
+                    <label for="romantic">Lãng Mạn</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="sport" name="genre" value="sport">
+                    <label for="sport">Thể Thao</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="schoolLife" name="genre" value="schoolLife">
+                    <label for="schoolLife">Học Đường</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="history" name="genre" value="history">
+                    <label for="history">Lịch Sử</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="horror" name="genre" value="horror">
+                    <label for="horror">Kinh Dị</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="supernatural" name="genre" value="supernatural">
+                    <label for="supernatural">Siêu Nhiên</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="tragedy" name="genre" value="tragedy">
+                    <label for="tragedy">Bi Kịch</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="reincarnation" name="genre" value="reincarnation">
+                    <label for="reincarnation">Trùng Sinh</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="game" name="genre" value="game">
+                    <label for="game">Game</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="sciFi" name="genre" value="sciFi">
+                    <label for="sciFi">Viễn Tưởng</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="science" name="genre" value="science">
+                    <label for="science">Khoa Học</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="detective" name="genre" value="detective">
+                    <label for="detective">Truyện Màu</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="adult" name="genre" value="adult">
+                    <label for="adult">Người Lớn</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="boyLove" name="genre" value="boyLove">
+                    <label for="boyLove">BoyLove</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="erotic" name="genre" value="erotic">
+                    <label for="erotic">Hầm Ngục</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="shortStory" name="genre" value="shortStory">
+                    <label for="shortStory">Sản Bản</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="sensitive" name="genre" value="sensitive">
+                    <label for="sensitive">Ngôn Từ Nhạy Cảm</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="doujinshi" name="genre" value="doujinshi">
+                    <label for="doujinshi">Doujinshi</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="violence" name="genre" value="violence">
+                    <label for="violence">Bạo Lực</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="romance" name="genre" value="romance">
+                    <label for="romance">Ngôn Tình</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="strongFemaleLead" name="genre" value="strongFemaleLead">
+                    <label for="strongFemaleLead">Nữ Cường</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="genderBender" name="genre" value="genderBender">
+                    <label for="genderBender">Gender Bender</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="murim" name="genre" value="murim">
+                    <label for="murim">Murim</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="leoThap" name="genre" value="leoThap">
+                    <label for="leoThap">Leo Tháp</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="cooking" name="genre" value="cooking">
+                    <label for="cooking">Nấu Ăn</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần Sắp Xếp -->
+        <div class="mb-6">
+            <div class="tieu-de-phan flex items-center justify-between cursor-pointer" onclick="anHienPhan('phan-sap-xep')">
+                <span>Sắp Xếp</span>
+                <span id="mui-ten-sap-xep" class="transform transition-transform duration-200">▼</span>
+            </div>
+            <div id="phan-sap-xep" class="nhom-checkbox">
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="mostViewed" name="sort" value="mostViewed">
+                    <label for="mostViewed">Lượt xem</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="mostRated" name="sort" value="mostRated">
+                    <label for="mostRated">Lượt đánh giá</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="mostFollowed" name="sort" value="mostFollowed">
+                    <label for="mostFollowed">Lượt theo dõi</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="newestUpdate" name="sort" value="newestUpdate">
+                    <label for="newestUpdate">Ngày Cập Nhật</label>
+                </div>
+                <div class="muc-checkbox">
+                    <input type="checkbox" id="newStory" name="sort" value="newStory">
+                    <label for="newStory">Truyện Mới</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tiêu đề cho khu vực hiển thị nội dung -->
+        <h2 class="tieu-de-phan text-2xl font-bold mb-4">Danh Sách Truyện</h2>
+
+        <!-- Khu vực hiển thị nội dung -->
+        <div id="hien-thi-noi-dung" class="luoi-noi-dung">
+            <!-- Nội dung sẽ được render tại đây bởi JavaScript -->
+        </div>
+
+        <!-- Điều khiển phân trang -->
+        <div id="dieu-khien-phan-trang" class="phan-trang">
+            <!-- Các nút phân trang sẽ được tạo tại đây -->
+        </div>
+    </div>
+
+<script src="web.js"></script>
+</body>
+</html>

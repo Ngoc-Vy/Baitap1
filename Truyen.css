@@ -1,0 +1,136 @@
+.detail-container {
+  display: flex; /* Chia layout thành 2 phần trái-phải */
+  gap: 32px; /* Khoảng cách giữa phần trái và phải */
+  max-width: 1200px; /* Chiều rộng tối đa */
+  margin: 40px auto; /* Căn giữa theo chiều ngang, cách trên dưới 40px */
+  color: #fff; /* Màu chữ trắng */
+}
+
+.detail-left {
+  flex: 1; /* Chiếm 1 phần trong layout flex */
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử con theo chiều dọc */
+  gap: 16px; /* Khoảng cách giữa các phần tử */
+  align-items: center; /* Căn giữa theo chiều ngang */
+}
+
+.cover-img {
+  width: 100%;
+  max-width: 280px; /* Giới hạn chiều rộng tối đa */
+  border-radius: 8px; /* Bo tròn góc hình ảnh */
+}
+
+.stats-box {
+  display: flex;
+  justify-content: space-between; /* Dàn đều các chỉ số */
+  width: 100%;
+  max-width: 280px;
+  gap: 12px;
+  font-size: 14px;
+  background: #222; /* Nền xám đậm */
+  padding: 8px;
+  border-radius: 6px; /* Bo tròn hộp */
+  text-align: center;
+}
+
+.rating {
+  font-size: 16px;
+  text-align: center;
+  color: #ffd700; /* Màu vàng cho điểm đánh giá */
+}
+
+.rating span {
+  color: #aaa; /* Màu xám nhạt cho số lượt đánh giá */
+  margin-left: 8px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px; /* Khoảng cách giữa các nút */
+}
+
+.follow-btn, .notify-btn {
+  background-color: #444; /* Nút nền xám đậm */
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px; /* Bo tròn nút */
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.follow-btn:hover, .notify-btn:hover {
+  background-color: #666; /* Màu nền khi hover */
+}
+
+.detail-right {
+  flex: 2; /* Chiếm gấp đôi phần bên trái */
+}
+
+.comic-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.tags span {
+  background-color: #333; /* Nền xám cho tag */
+  padding: 4px 8px;
+  margin-right: 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #ccc; /* Màu chữ xám nhạt */
+}
+
+.description {
+  margin: 20px 0;
+  line-height: 1.6; /* Tăng khoảng cách dòng cho dễ đọc */
+}
+
+.info-box {
+  background-color: #1c1c1c; /* Nền rất tối */
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.updating {
+  color: #2ee; /* Màu xanh lam sáng cho trạng thái "Đang cập nhật" */
+}
+
+.status {
+  color: #4fff4f; /* Màu xanh lá sáng cho trạng thái "Hoàn thành" */
+}
+
+.chapter-list-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Tự động chia cột linh hoạt */
+  gap: 16px; /* Khoảng cách giữa các ô chương */
+}
+
+.chapter-card {
+  background-color: #2a2a2a; /* Nền ô chương màu xám đậm */
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease; /* Hiệu ứng hover mượt */
+}
+
+.chapter-card span {
+  display: block;
+  font-size: 12px;
+  color: #aaa; /* Màu mờ cho ngày cập nhật */
+  margin-top: 4px;
+}
+
+.chapter-card:hover {
+  background-color: #3a3a3a; /* Màu nền sáng hơn khi hover */
+}

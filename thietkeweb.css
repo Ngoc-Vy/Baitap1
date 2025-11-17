@@ -1,0 +1,394 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a1a1a; /* Màu nền tối */
+    color: #f0f0f0; /* Màu chữ sáng */
+}
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #111;
+    color: #eef1f3;
+}
+
+/* Header tổng thể */
+.header {
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Logo bên trái */
+.logo-img {
+    height: 40px;
+}
+
+/* Menu giữa */
+.header-center {
+    display: flex;
+    gap: 32px;
+}
+
+.header-center a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase; /* chữ in hoa */
+    font-size: 14px;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.header-center a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+/* Phần bên phải */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Ô tìm kiếm */
+#searchInput {
+    padding: 6px 10px;
+    background-color: transparent;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+}
+
+/* Icon người dùng */
+.user-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #2a2a2a;
+    padding: 4px;
+}
+
+
+/*Đây là cái 'khung lớn' chứa toàn bộ nội dung chính của trang */
+.container {
+    max-width: 1200px;/*Giới hạn chiều rộng tối đa của căn phòng là 1200 pixel, để trên màn hình lớn nó không bị trải quá rộng.*/
+    margin: 2rem auto;/*Đặt khoảng cách 2rem (khoảng 32px) từ trên/dưới và tự động căn giữa trái/phải (auto) cho căn phòng, giúp nó luôn nằm ở giữa màn hình.
+
+*/
+    padding: 1.5rem;/*Tạo khoảng cách đệm 1.5rem bên trong căn phòng, tránh nội dung bị dính sát vào viền.*/
+    background-color: #2a2a2a; /* Nền của container(khung chứa toàn bộ) */
+    border-radius: 12px;/*Bo tròn các góc của căn phòng 12px,*/
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.tieu-de-phan {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    /*Đặt kích thước, độ đậm và màu chữ cho tiêu đề (của 3 cái trên)*/
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #444;
+    /*Tạo khoảng cách bên dưới tiêu đề và một đường gạch mờ, giúp phân biệt rõ ràng các phần.*/
+}
+.nhom-checkbox {
+    display: grid;/*Biến nhóm checkbox thành một hệ thống lưới*/
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));/* Đây là phần quan trọng nhất. Nó bảo trình duyệt rằng hãy tự động tạo các cột, mỗi cột rộng ít nhất 120px và có thể co giãn để lấp đầy không gian. Điều này giúp các ô checkbox tự động dàn đều trên một hàng và xuống dòng nếu không đủ chỗ, rất tiện cho các màn hình khác nhau.*/
+    gap: 0.75rem;/*Tạo khoảng cách giữa các ô checkbox.*/
+    margin-bottom: 1.5rem;
+    padding: 1rem; /* Thêm padding cho đường viền */
+    border: 1px solid #444; /* Thêm đường viền */
+    border-radius: 8px; /* Bo góc cho đường viền */
+}
+.muc-checkbox {
+    display: flex;
+    align-items: center; /* Căn giữa nội dung theo chiều dọc trong ô */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    padding: 0.5rem 0.75rem; /* Tăng padding để có nhiều không gian hơn */
+    min-height: 48px; /* Đặt chiều cao tối thiểu để các ô bằng nhau */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào kích thước */
+    border-radius: 8px;/* 3 cái sau : Bo tròn góc, biến con trỏ thành bàn tay khi rê chuột, và tạo hiệu ứng chuyển động mượt mà khi rê chuột.*/
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid transparent; /* Viền mặc định trong suốt  sẽ đổi được màu khi chọn*/
+    text-align: center; /* Căn giữa văn bản */
+}
+.muc-checkbox:hover {
+    background-color: #4a4a4a;
+}
+/*=>Đây là kiểu dáng cho từng ô lựa chọn cụ thể. Em đã làm cho chúng trông gọn gàng, có khoảng cách đều và có hiệu ứng thay đổi màu khi rê chuột, giúp người dùng dễ dàng nhận ra đâu là khu vực có thể tương tác ạ."*/
+
+/* Ẩn checkbox gốc */
+/* Ẩn hoàn toàn checkbox gốc đi. Người dùng sẽ không thấy nó, nhưng nó vẫn tồn tại và hoạt động 'ngầm' để lưu trữ trạng thái chọn/bỏ chọn.*/
+.muc-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Tạo checkbox tùy chỉnh bằng phần tử giả */
+.muc-checkbox label {
+    display: flex; /* Dùng flex để căn chỉnh biểu tượng và chữ */
+    align-items: center; /* Căn giữa biểu tượng và chữ theo chiều dọc */
+    position: relative; /* Quan trọng cho việc định vị các pseudo-element */
+    padding-left: 28px; /* Tạo khoảng trống cho checkbox tùy chỉnh */
+    cursor: pointer;
+    line-height: 1.2; /* Giúp các dòng văn bản không quá xa nhau */
+    flex-grow: 1; /* Cho phép label mở rộng để lấp đầy không gian */
+    white-space: normal; /* Cho phép văn bản xuống dòng */
+    overflow: hidden; /* Ẩn phần văn bản tràn nếu không đủ chỗ */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu văn bản bị tràn */
+    justify-content: center; /* Căn giữa nội dung nhãn */
+    text-align: center; /* Căn giữa văn bản trong label */
+}
+
+/* Khung hình vuông của checkbox tùy chỉnh */
+.muc-checkbox label::before {          /*Tạo ra khung hình vuông của checkbox (cái ô vuông bạn thấy). Nó được định vị tuyệt đối so với label và được căn giữa theo chiều dọc. Có màu nền và viền mặc định.*/
+    content: '';
+    position: absolute;
+    left: 0; /* Đặt ở vị trí 0 từ lề trái của padding-left của label */
+    top: 50%; /* Căn giữa theo chiều dọc của label */
+    transform: translateY(-50%); /* Dịch lên một nửa chiều cao của nó để căn giữa */
+    width: 18px;
+    height: 18px;
+    border: 2px solid #555; /* Thay đổi viền mặc định thành màu xám đậm */
+    border-radius: 4px;
+    background-color: #333; /* Màu nền mặc định của checkbox */
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Dấu tích của checkbox tùy chỉnh */
+.muc-checkbox label::after {      /*Tạo ra dấu tích bên trong khung checkbox. Nó cũng được định vị tuyệt đối, được xoay 45 độ để tạo thành dấu tích và ban đầu ẩn đi (opacity: 0).*/
+    content: '';
+    position: absolute;
+    left: 6px; /* Vị trí dấu tích, offset từ left của ::before (0 + (18-6)/2) */
+    top: 50%; /* Căn giữa theo chiều dọc của label */
+transform: translateY(-50%) rotate(45deg); /* Dịch lên một nửa chiều cao và xoay */
+    width: 6px;
+    height: 12px;
+    border: solid white; /* Màu của dấu tích */
+    border-width: 0 2px 2px 0;
+    opacity: 0; /* Ẩn dấu tích mặc định */
+    transition: opacity 0.2s ease;
+}
+
+/* Khi checkbox được chọn */
+.muc-checkbox input[type="checkbox"]:checked + label::before {
+    background-color: #63b3ed; /* Màu nền khi chọn (màu xanh) */
+    border-color: #63b3ed; /* Thay đổi màu viền trùng với màu nền để loại bỏ viền xanh */
+}
+
+.muc-checkbox input[type="checkbox"]:checked + label::after {
+    opacity: 1; /* Hiển thị dấu tích */
+}
+/*Khi checkbox gốc được checked, CSS này sẽ làm cho dấu tích hiện ra (opacity: 1), xác nhận việc lựa chọn.*/
+/*Dạ thưa cô, phần này là kỹ thuật 'biến hóa' cái ô lựa chọn mặc định của trình duyệt. Em đã 'giấu' ô mặc định đi và dùng CSS để tạo ra một ô lựa chọn mới với kiểu dáng hiện đại hơn, có khung và dấu tích riêng. Khi người dùng bấm chọn, cái ô đó sẽ chuyển sang màu xanh và có dấu tích, rất trực quan ạ.*/
+
+/* Style cho các mục đã chọn (giữ nguyên để phù hợp với theme) */
+.muc-checkbox.da-chon {
+    background-color: #4a1e1e; /* Nền đỏ đậm hơn */
+    border-color: #dc2626; /* Đường viền đỏ */
+}
+.muc-checkbox.da-chon label {
+    color: #ef4444; /* Màu chữ đỏ */
+}
+/* Đảm bảo màu của checkbox tùy chỉnh cũng thay đổi khi là 'da-chon' */
+.muc-checkbox.da-chon input[type="checkbox"]:checked + label::before {    /*Khi người dùng chọn một bộ lọc, JavaScript sẽ thêm một 'nhãn' đặc biệt vào ô đó. Phần CSS này sẽ nhận ra cái 'nhãn' đó và đổi màu ô thành màu đỏ nổi bật, giúp người dùng dễ dàng nhìn thấy những tiêu chí lọc mà họ đang chọn ạ."*/
+    background-color: #ef4444; /* Màu nền checkbox đỏ khi 'da-chon' được chọn */
+    border-color: #ef4444; /* Màu viền checkbox đỏ khi 'da-chon' được chọn */
+}
+.muc-checkbox.da-chon input[type="checkbox"]:checked + label::after {
+    border-color: white; /* Giữ màu dấu tích trắng hoặc đổi màu phù hợp */
+}
+
+
+.o-tim-kiem {
+    width: 78%;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #f0f0f0;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    border: 1px dashed #4f4f4f;/*Tạo một đường viền nét đứt nhẹ nhàng.*/
+}
+.o-tim-kiem:focus {  /* Khi người dùng click vào ô để gõ, viền sẽ chuyển màu xanh và có bóng mờ, báo hiệu ô đang được chọn.*/
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.3);
+}
+.thanh-tim-kiem {
+    display: flex;
+    align-items: center;
+gap: 1rem;
+    /*Sắp xếp ô nhập và nút tìm kiếm trên cùng một hàng, căn giữa và có khoảng cách.*/
+    margin-bottom: 2rem;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    /*=>Tạo nền, bo góc và bóng đổ cho cả thanh tìm kiếm.*/
+}
+.nut-tim-kiem {
+    background-color: #63b3ed;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;/*Tạo hiệu ứng chuyển màu mượt mà khi rê chuột.*/
+    white-space: nowrap; /* Ngăn nút tìm kiếm bị xuống dòng */
+}
+.nut-tim-kiem:hover {
+    background-color: #4299e1;
+    transform: translateY(-1px);/*, tạo hiệu ứng tương tác vui mắt.*/
+}
+
+/* Styles hiển thị nội dung */
+.luoi-noi-dung {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /*Tương tự như nhóm checkbox, nó sắp xếp các bộ truyện thành một lưới, mỗi cột rộng tối thiểu 180px và tự động co giãn.*/
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444;
+    /*Tạo khoảng cách giữa các truyện và một đường gạch ở trên để phân biệt với phần lọc.*/
+}
+.muc-noi-dung {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /*=>: Đặt nền, bo góc, ẩn nội dung tràn, và thêm bóng đổ cho mỗi bộ truyện.*/
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex; 
+    flex-direction: column;
+    /*Đảm bảo nội dung bên trong mỗi bộ truyện (ảnh, tiêu đề, thông tin phụ) được xếp chồng lên nhau.*/
+}
+.muc-noi-dung:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    /*Tạo hiệu ứng khi rê chuột vào một bộ truyện, nó sẽ hơi 'nhảy' lên và bóng đổ đậm hơn.*/
+}
+.muc-noi-dung img {
+    width: 100%;
+    height: 250px; /* Chiều cao cố định để nhất quán */
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+    /*Đảm bảo ảnh chiếm toàn bộ chiều rộng của khung truyện, có chiều cao cố định 250px và ảnh sẽ được 'cắt' (cover) để vừa với khung mà không bị méo.*/
+}
+.chi-tiet-noi-dung {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Đệm bên trong và sắp xếp nội dung (tiêu đề, thông tin phụ) theo cột, và flex-grow: 1 giúp nó chiếm hết không gian còn lại.*/
+}
+.chi-tiet-noi-dung h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+min-height: 2.5em; /* Đảm bảo tên truyện có chiều cao tối thiểu để các khung truyện trông đều hơn */
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /*Đây là kỹ thuật quan trọng để giới hạn tên truyện chỉ hiển thị 2 dòng. Nếu dài hơn, nó sẽ tự động thêm dấu '...' ở cuối.*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.thong-tin-phu {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: auto; /* Đặt kích thước chữ nhỏ hơn, màu xám, và margin-top: auto đẩy các thông tin này xuống phía dưới cùng của khung truyện, tạo sự gọn gàng. */
+   
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.thong-tin-phu span { /* mỗi dòng thông tin được sắp xếp ngang hàng với icon.*/
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.icon {
+    width: 14px;
+    height: 14px;
+    fill: #aaa;
+}
+/*=> đây là khu vực trưng bày' các bộ truyện ạ. Em dùng grid để các bộ truyện tự động dàn thành nhiều cột, trông rất gọn gàng. Mỗi bộ truyện là một 'thẻ' nhỏ, có ảnh bìa và các thông tin cần thiết. Đặc biệt, em đã giới hạn tên truyện chỉ hiển thị 2 dòng và thêm dấu '...' nếu tên quá dài, giúp giao diện luôn sạch đẹp. Các thông tin phụ như lượt xem, đánh giá cũng có các icon nhỏ đi kèm để dễ nhìn ạ."*/
+
+
+.phan-trang {
+    display: flex;
+    justify-content: center;/*Sắp xếp các nút phân trang trên một hàng và căn giữa.*/
+    /*Tạo khoảng cách từ các truyện và khoảng cách giữa các nút.*/
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+.phan-trang button {
+    background-color: #3a3a3a;
+    color: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    /*=>Định dạng màu nền, màu chữ, đệm, bo góc.*/
+    /*Biến con trỏ thành bàn tay và tạo hiệu ứng chuyển màu mượt mà khi rê chuột.*/
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+}
+.phan-trang button:hover {
+    background-color: #4a4a4a;
+}
+.phan-trang button.active { /* Nút của trang hiện tại sẽ có màu xanh và chữ đậm hơn, giúp người dùng biết mình đang ở trang nào.*/
+    background-color: #63b3ed;
+    color: white;
+    font-weight: 600;
+}
+/*=>Phần này là 'cầu thang' giúp người dùng di chuyển giữa các trang truyện. Em đã thiết kế các nút số trang, nút 'Trước' và 'Sau' trông gọn gàng, có hiệu ứng khi rê chuột và đặc biệt là nút của trang hiện tại sẽ có màu xanh để người dùng dễ dàng nhận biết ạ.*/
+
+
+/* Điều chỉnh responsive cho độ co giãn */
+@media (max-width: 768px) {
+    .nhom-checkbox { /*Các ô checkbox sẽ được dàn thành nhiều cột hơn trên màn hình nhỏ.*/
+grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    .thanh-tim-kiem { /* Thanh tìm kiếm sẽ chuyển từ bố cục ngang sang bố cục dọc (nút và ô nhập liệu xếp chồng lên nhau) để phù hợp với màn hình hẹp hơn.*/
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .o-tim-kiem {
+        width: 100%;
+    }
+    .nut-tim-kiem {
+        width: 100%;
+        text-align: center;
+    }
+    /*=>Ô tìm kiếm và nút sẽ chiếm toàn bộ chiều rộng (100%) của thanh tìm kiếm.*/
+    .luoi-noi-dung {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .muc-noi-dung img { /*Chiều cao ảnh bìa truyện có thể giảm xuống còn 200px.*/
+        height: 200px;
+    }
+}
+/*đây là cách em đảm bảo trang web của mình 'linh hoạt' trên mọi thiết bị, từ máy tính đến điện thoại. Khi người dùng truy cập bằng điện thoại, phần này sẽ tự động điều chỉnh lại bố cục: ví dụ, thanh tìm kiếm sẽ xếp dọc thay vì ngang, các bộ truyện cũng tự động sắp xếp lại cho phù hợp với màn hình nhỏ, giúp trải nghiệm người dùng luôn tốt nhất ạ. Em đã dùng media query để làm được điều này."*/
