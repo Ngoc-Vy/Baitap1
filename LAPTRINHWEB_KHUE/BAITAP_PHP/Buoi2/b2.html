@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập tổng hợp PHP</title>
+    <link rel="stylesheet" href="b2.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Bài tập tổng hợp PHP</h1>
+
+    <h2>1. Bảng Fibonacci</h2>
+    <form action="b2.php" method="POST" class="form-box">
+        <input type="hidden" name="mode" value="fibo">
+        <label>Nhập n:</label>
+        <input type="number" name="n_fibo" required>
+        <button type="submit">Hiển thị Fibonacci</button>
+    </form>
+
+    <h2>2. Vẽ hình bằng ký tự (*)</h2>
+    <form action="b2.php" method="POST" class="form-box">
+        <input type="hidden" name="mode" value="shape">
+        <label>Nhập n:</label>
+        <input type="number" name="n_shape" required>
+
+        <label>Chọn loại hình:</label>
+        <select name="shape">
+            <option value="vuong">Tam giác vuông</option>
+            <option value="can">Tam giác cân</option>
+            <option value="rong">Hình vuông rỗng</option>
+        </select>
+
+        <button type="submit">Vẽ hình</button>
+    </form>
+</div>
+</body>
+</html>

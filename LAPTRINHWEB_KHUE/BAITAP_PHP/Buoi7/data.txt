@@ -1,0 +1,11 @@
+1. Giới thiệu về File trong PHP
+Trong PHP, mọi thứ trên server đều là file hoặc thư mục:
+
+File text, file ảnh, file config (.env, .json, .xml), file log…
+PHP cung cấp hàng trăm hàm để thao tác với file một cách mạnh mẽ và an toàn.
+
+Quan trọng cần nhớ:
+
+Đường dẫn có thể là tương đối hoặc tuyệt đối
+Luôn kiểm tra quyền (permission) của thư mục (thường phải 0755 hoặc 0777 trên hosting)
+Luôn kiểm tra lỗi khi làm việc với file

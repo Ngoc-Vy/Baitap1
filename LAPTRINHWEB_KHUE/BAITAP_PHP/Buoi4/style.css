@@ -1,0 +1,103 @@
+/* style.css - thêm phần menu */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+header {
+    background: #4a00e0;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 { font-size: 2.2em; }
+
+/* MENU CHỌN BÀI */
+.menu-bai {
+    padding: 20px;
+    background: #f8f9fa;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-bai select {
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #4a00e0;
+    background: white;
+    cursor: pointer;
+}
+
+main { padding: 30px; }
+
+.form-group {
+    display: none; /* Ẩn tất cả bài */
+    background: #f8f9fa;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 6px solid #a8d8d5;
+    animation: fadeIn 0.5s;
+}
+
+.form-group.active {
+    display: block; /* Chỉ hiện bài được chọn */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-group h3 {
+    color: #4a00e0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 30px;
+    background: #4a00e0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover { background: #3a00b8; }
+
+.result {
+    margin-top: 15px;
+    padding: 15px;
+    background: #e3f2fd;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #1565c0;
+    border-left: 5px solid #2196f3;
+    font-size: 1.1em;
+}

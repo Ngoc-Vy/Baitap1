@@ -1,0 +1,26 @@
+Cách 2: Dùng fopen, fread, fwrite, fclose (khi cần kiểm soát chi tiết)
+// Mở file (các mode phổ biến)
+// r  = đọc (read)
+// w  = ghi đè (write)
+// a  = ghi thêm vào cuối (append)
+// r+ = đọc + ghi (con trỏ đầu file)
+// w+ = đọc + ghi (xóa cũ trước)
+// a+ = đọc + ghi thêm
+
+$fp = fopen('data.txt', 'a+'); // mở để ghi thêm + đọc
+
+if ($fp) {
+    // Ghi vào file
+    fwrite($fp, "Dòng mới lúc " . date('d/m/Y H:i:s') . "\n");
+    
+    // Đọc lại từ đầu
+    rewind($fp); // đưa con trỏ về đầu file
+    while (!feof($fp)) { // đọc đến cuối file
+        echo fgets($fp) . "<br>"; // fgets đọc từng dòng
+    }
+    
+    fclose($fp); // ĐÓNG FILE LẠI – RẤT QUAN TRỌNG!
+} else {
+    echo "Không mở được file";
+}[09/12/2025 04:24:35] hello
+
